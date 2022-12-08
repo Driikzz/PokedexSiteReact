@@ -3,6 +3,7 @@ import { getAll } from "../api/pokemon";
 import { useState,useEffect } from "react";
 
 function PokemonList(){
+
     const [ pokemons, setPokemons ] = useState([]);
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
@@ -12,7 +13,8 @@ function PokemonList(){
         .then(result => setPokemons(result))
         .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[]);
-    return <div className="pokemon-list">
+    return <label> 
+        <div className="pokemon-list">
         <div class="flex">
         {
             pokemons.map((pokemon,key) =>{
@@ -22,7 +24,8 @@ function PokemonList(){
             })
         }
         </div>
-    </div>;
+    </div>
+    </label>
 
 }
 
