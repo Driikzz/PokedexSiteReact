@@ -1,7 +1,8 @@
 
-import Menu from "../components/NavBar"
 
-function Home(){
- 
+
+function Home() {
+
 }
+
 export default Home;
