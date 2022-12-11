@@ -18,7 +18,8 @@ function PokemonList(){
         <div class="flex">
         {
             pokemons.map((pokemon,key) =>{
-            return <div key={key} className="bloc-pokemon">
+                return <div key={key} className="bloc-pokemon">
+                <img className="avatar" src={pokemon.sprites.animated} />
                 <h2>{pokemon.name}</h2>
             </div>
             })
