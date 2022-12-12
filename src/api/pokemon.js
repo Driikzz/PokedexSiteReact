@@ -12,3 +12,15 @@ export const getAll = async () => {
     const pokemons = await response.json()
     return pokemons
 }
+
+
+
+
+
+
+
+
+
+
+
+

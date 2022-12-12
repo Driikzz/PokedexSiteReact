@@ -1,13 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+.pokemon-card{
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.pokemon-card{
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pokemon-card img{
+  margin: auto;
+}
+
+.pokemon-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }

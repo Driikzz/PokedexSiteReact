@@ -1,6 +1,11 @@
 
 import { getAll } from "../api/pokemon";
 import { useState,useEffect } from "react";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import { Col } from "react-bootstrap";
 
 function PokemonList(){
 
@@ -13,19 +18,36 @@ function PokemonList(){
         .then(result => setPokemons(result))
         .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[]);
-    return <label> 
-        <div className="pokemon-list">
-        <div class="flex">
+    return <label>
+        <Row>
+            <Col xs={2}></Col>
+            <Col><div className="pokemon-list">
+        <Container className="container">
+        <Row>    
         {
             pokemons.map((pokemon,key) =>{
-                return <div key={key} className="bloc-pokemon">
-                <img className="avatar" src={pokemon.sprites.animated} />
-                <h2>{pokemon.name}</h2>
-            </div>
+                return <Card className="pokemon-card" style={{ width: '15rem' }}>
+                <Card.Img variant="top" style={{ width: '100px',height:'95px'}}  src={pokemon.sprites.normal} />
+                <Card.Body>
+                  <Card.Title>{pokemon.name}</Card.Title>
+                  <Card.Text>
+                  La taille: {pokemon.height}
+                  <br></br>
+                  Son poind: {pokemon.weight}
+                  <br></br>
+                  type: {pokemon.type}
+                  </Card.Text>
+                  <Button variant="primary">Capturer pour son pokedex</Button>
+                </Card.Body>
+              </Card>
             })
-        }
-        </div>
-    </div>
+        }  
+            </Row>
+            </Container>
+        </div></Col>
+            <Col xs={2}></Col>
+        </Row>
+        
     </label>
 
 }
