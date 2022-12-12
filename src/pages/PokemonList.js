@@ -1,5 +1,5 @@
 
-import { getAll } from "../api/pokemon";
+import { getAll, pokemonInPokedex } from "../api/pokemon";
 import { useState,useEffect } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -18,26 +18,25 @@ function PokemonList(){
         .then(result => setPokemons(result))
         .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[]);
-    return <label>
+    return <label className="label">
         <Row>
-            <Col xs={2}></Col>
             <Col><div className="pokemon-list">
         <Container className="container">
-        <Row>    
+        <Row className="test" >    
         {
             pokemons.map((pokemon,key) =>{
                 return <Card className="pokemon-card" style={{ width: '15rem' }}>
-                <Card.Img variant="top" style={{ width: '100px',height:'95px'}}  src={pokemon.sprites.normal} />
+                <Card.Img variant="top" style={{ height:"6rem",width:"fit-content",alignSelf:"center"}}  src={pokemon.sprites.animated} />
                 <Card.Body>
                   <Card.Title>{pokemon.name}</Card.Title>
                   <Card.Text>
                   La taille: {pokemon.height}
                   <br></br>
-                  Son poind: {pokemon.weight}
+                  Son poid: {pokemon.weight}
                   <br></br>
                   type: {pokemon.type}
                   </Card.Text>
-                  <Button variant="primary">Capturer pour son pokedex</Button>
+                  <Button onClick={()=>pokemonInPokedex(pokemon.name)} variant="primary">Capturer pour son pokedex</Button>
                 </Card.Body>
               </Card>
             })
@@ -45,7 +44,6 @@ function PokemonList(){
             </Row>
             </Container>
         </div></Col>
-            <Col xs={2}></Col>
         </Row>
         
     </label>
