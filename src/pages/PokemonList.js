@@ -6,11 +6,9 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Col } from "react-bootstrap";
-import Toast from 'react-bootstrap/Toast';
 
 
 function PokemonList(){
-    const [show, setShow] = useState(false);
     const [ pokemons, setPokemons ] = useState([]);
     useEffect(() => {
     const pokemonsFetched = getAll();
@@ -36,11 +34,7 @@ function PokemonList(){
                   <br></br>
                   type: {pokemon.type}
                   </Card.Text>
-                    <Button onClick={()=>{
-                        pokemonInPokedex(pokemon.name);
-                        setShow(true);
-                    }
-                    } variant="secondary">Capturer</Button>
+                    <Button onClick={()=>{pokemonInPokedex(pokemon.name);}} variant="secondary">Capturer</Button>
                 </Card.Body>
               </Card>
             })
