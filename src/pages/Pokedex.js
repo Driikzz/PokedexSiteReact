@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
   function Pokedex(){
 
     const [ pokedex, setPokedex ] = useState([]);
+    const  [count, setCount] = useState(0);
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
     // récupérer la liste des users seulement au chargement du composant ! 
@@ -18,7 +19,7 @@ import Button from 'react-bootstrap/Button';
    pokedexFetched
         .then(result => setPokedex(result))
         .catch(error=>console.error("Erreur avec notre API :",error.message));
-    },[]);
+    },[count]);
     return <label className="label">
         <Row>
             <Col><div className="pokedex-list">
@@ -37,7 +38,7 @@ import Button from 'react-bootstrap/Button';
                   <br></br>
                   type: {pokedex.type}
                   </Card.Text>
-                  <Button onClick={()=>deletePokedex(pokedex.name)} variant="primary">Supprimer du Pokedex</Button>
+                  <Button onClick={()=>{deletePokedex(pokedex.name);setCount(count+1)}} variant="primary">Supprimer du Pokedex</Button>
                 </Card.Body>
               </Card>
             })
