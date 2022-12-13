@@ -5,7 +5,8 @@
   margin-right: 10px;
   margin-bottom: 20px;
   text-align: center;
-  margin-left: 10px;
+  margin-left: 12px;
+  margin-top: 20px !important;
 }
 
 
@@ -43,12 +44,20 @@
 .logo-toast{
   width: 50px;
 }
+.pokedexh3{
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
 
 .body-poke-list{
-  background-color:#1111;
+background-color:#2f3e46;
 }
 .label-poke-list{
-  background-color:#2f3e46;
+ 
+  background-image: url(img/backroundpokelist.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .center{
   justify-content: center;
@@ -56,4 +65,36 @@
 
 .car-shadow{
   box-shadow: 11px 9px 10px -4px rgba(0,0,0,0.35);
+}
+
+.background-pokedex{
+  background-image: url(img/testbackround.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.pokedex-container{
+  border-radius: 17px 17px 17px 17px;
+  border: 0.5px solid #434444;
+  background-color:#7c8552e0;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.title-pokedex{
+  font-size: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
+
+}
+
+.backgroundHome{
+  background-image:url(img/pokemon-black-white-wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
 }
