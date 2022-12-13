@@ -11,7 +11,6 @@ import { deletePokedex } from "../api/pokemon";
   function Pokedex(){
 
     const [ pokedex, setPokedex ] = useState([]);
-    
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
     // récupérer la liste des users seulement au chargement du composant ! 
@@ -19,7 +18,7 @@ import { deletePokedex } from "../api/pokemon";
    pokedexFetched
         .then(result => setPokedex(result))
         .catch(error=>console.error("Erreur avec notre API :",error.message));
-    },[]);
+    },[count]);
     return <label className="label">
         <Row>
             <Col><div className="pokedex-list">
@@ -38,9 +37,7 @@ import { deletePokedex } from "../api/pokemon";
                   <br></br>
                   type: {pokedex.type}
                   </Card.Text>
-                  <input type='text' id={key} name='name' placeholder='Donnez lui un surnom'/>
-                  <button onClick={()=>renamePokedex(pokemon , key )}>Renommer{pokemon.name} </button>
-                  <button onClick={()=>deletePokedex(pokedex.name)} variant="primary">Supprimer du Pokedex</button>
+                  <Button onClick={()=>deletePokedex(pokedex.name)} variant="primary">Supprimer du Pokedex</Button>
                 </Card.Body>
               </Card>
             })
