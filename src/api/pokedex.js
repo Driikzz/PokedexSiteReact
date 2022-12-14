@@ -13,20 +13,15 @@ export const getAll = async () => {
     return pokedex
 }
 
-export const renamePokedex = async (pokemon , newname) => {
+export const renamePokedex = async (data) => {
     const response = await fetch(
-        'http://localhost:4444/pokemon/updatePoke', {
+        'http://localhost:4444/pokedexUser/update', {
             method: 'POST', 
             headers: {
                 'Accept': 'application/json', 
                 'Content-Type':'application/json'
             },
-            body:JSON.stringify({
-                'changePokemon': pokemon.name,
-                'name':document.getElementById(newname).value
-
-
-            })
+            body:JSON.stringify(data)
         }
     )
     const pokedexUpdate = await response.json()

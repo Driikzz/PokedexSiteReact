@@ -20,6 +20,7 @@ function Menu() {
             <Nav className="me-auto">
               <Nav.Link href="/PokemonList">Pokémon Liste</Nav.Link>
               <Nav.Link href="/Pokedex">Pokedex</Nav.Link>
+              <Nav.Link href="/Admin">Create Pokémon</Nav.Link>
             </Nav>
           </Container>
         </Navbar>

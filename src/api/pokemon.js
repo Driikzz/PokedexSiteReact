@@ -32,7 +32,6 @@ export function pokemonInPokedex(data){
 }
 
 export function deletePokedex(data){
-    console.log(data)
     fetch('http://localhost:4444/pokedexUser/delete', {
     method: 'DELETE',
     headers: {
@@ -50,24 +49,29 @@ export function deletePokedex(data){
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export function pokemonCreate(data){
+    console.log(data)
+    fetch('http://localhost:4444/pokemon/insert', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        'height':data.height,
+        "weight":data.weight,
+        "name":data.name,
+        "type":data.type,
+        "sprites":{
+            "normal":data.normal,
+            "animated":data.animated
+        }
+    }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error,data);
+    });
+}

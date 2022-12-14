@@ -93,8 +93,64 @@ background-color:#2f3e46;
 }
 
 .backgroundHome{
-  background-image:url(img/pokemon-black-white-wallpaper.jpg);
+  box-shadow: 14px 13px 11px -3px rgba(0,0,0,0.6);
+  background-image:url(img/backgroundHome.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 400px;
+}
+
+.image-black-white{
+  background-image:url(img/noire-blanche.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+.image-in-game{
+  background-image:url(img/imageingame.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
+  width: 150px;
+  padding-bottom: 500px;
+}
+.avis{
+  background-color:#7c8552e0;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: lighter;
+  font-size: xx-small;
+}
+.home-container{
+  padding-top: 100px;
+  padding-bottom: 150px;
+  padding-left: 100px;
+}
+
+.row-carousel{
+  margin-top: 100px !important;
+}
+.carousel-image{
+  width: 450px !important;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.carousel-inner{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem;
+  margin-right: 12rem;
+  overflow: auto;
+}
+.carousel-indicators{
+  display: none !important;
+}
+
+.pokemon-titre{
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+.carousel-inner{
+  overflow: initial !important;
 }

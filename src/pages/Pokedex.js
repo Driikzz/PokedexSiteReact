@@ -6,19 +6,20 @@ import { Col } from "react-bootstrap";
 import { deletePokedex } from "../api/pokemon";
 import Button from 'react-bootstrap/Button';
 import { getAll } from "../api/pokedex";
+import ChangeNameForm from "../components/ChangeNameForm";
 
-  function Pokedex(){
-    const [count , setCount] = useState(0);
+  function Pokedex(counter){
     const [ pokedex, setPokedex ] = useState([]);
-    //va s'executer seulement au lancement du composant (dep: [])
-    useEffect(() => {
-    // récupérer la liste des users seulement au chargement du composant ! 
+   
+    useEffect(() => { 
     const pokedexFetched = getAll();
     pokedexFetched
         .then(result => setPokedex(result))
         .catch(error=>console.error("Erreur avec notre API :",error.message));
-    },[count]);
-    return <label className="label body-poke-list">
+    },);
+    
+    
+    return <div className="label body-poke-list">
       <div className="background-pokedex">
         <Row>
             <Col><div className="pokedex-list ">
@@ -29,7 +30,7 @@ import { getAll } from "../api/pokedex";
           </div>
         <Row >    
         {
-            pokedex.map((pokedex, key ) =>{
+            pokedex.map((pokedex, key) =>{
                 return <Card className="pokemon-card policePokemon car-shadow" style={{ width: '15rem'}}>
                 <Card.Img variant="top" style={{ width: '100px',height:'95px'}}  src={pokedex.sprites.normal} />
                 <Card.Body>
@@ -41,7 +42,8 @@ import { getAll } from "../api/pokedex";
                     <br></br>
                     type: {pokedex.type}
                   </Card.Text>
-                    <Button onClick={()=>{deletePokedex(pokedex.name);setCount(count+1)}} variant="danger">Supprimer</Button>
+                    <Button onClick={()=>{deletePokedex(pokedex.name);counter.funcSetCount(counter.varCount+1)}} variant="danger">Supprimer</Button>
+                    <ChangeNameForm pokedex={pokedex}/>
                 </Card.Body>
               </Card>
             })
@@ -52,7 +54,7 @@ import { getAll } from "../api/pokedex";
         </Row>
       </div>
         
-    </label>
+    </div>
 
 }
 

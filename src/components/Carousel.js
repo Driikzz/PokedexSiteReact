@@ -1,14 +1,15 @@
-
+import Carousel from 'react-bootstrap/Carousel';
+import Row from 'react-bootstrap/Row';
 import { getAll, pokemonInPokedex } from "../api/pokemon";
 import { useState,useEffect } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import { Col } from "react-bootstrap";
+import { Col, Container } from 'react-bootstrap';
 
 
-function PokemonList(){
+
+
+function CarouselHome() {
     const [ pokemons, setPokemons ] = useState([]);
     useEffect(() => {
     const pokemonsFetched = getAll();
@@ -16,14 +17,13 @@ function PokemonList(){
         .then(result => setPokemons(result))
         .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[]);
-    return <label className="label">    
-        <Row className="label-poke-list">
-            <Col><div className="pokemon-list">
-        <Container className="container "> 
-        <Row className="center " >
+    return <div className="label">
+        <Row className='row-carousel'>
+        <Carousel variant="dark" className='carousel-image' style={{overflow:"initial"}}>
         {
             pokemons.map((pokemon,key) =>{
-                return <Card className="pokemon-card policePokemon car-shadow" style={{ width: '15rem' }}>
+                return <Carousel.Item style={{paddingRight:"4rem"}}>
+                    <Card className="pokemon-card policePokemon car-shadow" style={{ width: '15rem' }}>
                 <Card.Img variant="top" style={{ height:"6rem",width:"fit-content",alignSelf:"center"}}  src={pokemon.sprites.animated} />
                 <Card.Body>
                   <Card.Title>{pokemon.name}</Card.Title>
@@ -34,17 +34,16 @@ function PokemonList(){
                   <br></br>
                   type: {pokemon.type}
                   </Card.Text>
-                    <Button onClick={()=>{pokemonInPokedex(pokemon.name);}} variant="secondary">Capturer</Button>
                 </Card.Body>
               </Card>
+              </Carousel.Item>
+            
             })
-        }  
-            </Row>
-            </Container>
-        </div></Col>
-        </Row>
+        }
+            </Carousel>   
+        </Row>  
         
-    </label>
-
+    </div>
 }
-export default PokemonList;
+
+export default CarouselHome;
