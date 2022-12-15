@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Col } from "react-bootstrap";
+import Footer from "../components/Footer";
 
 
 function PokemonList(){
@@ -23,7 +24,7 @@ function PokemonList(){
         <Row className="center " >
         {
             pokemons.map((pokemon,key) =>{
-                return <Card className="pokemon-card policePokemon car-shadow" style={{ width: '15rem' }}>
+                return <Card className="pokemon-card policePokemon car-shadow card-hover" style={{ width: '15rem' }}>
                 <Card.Img variant="top" style={{ height:"6rem",width:"fit-content",alignSelf:"center"}}  src={pokemon.sprites.animated} />
                 <Card.Body>
                   <Card.Title>{pokemon.name}</Card.Title>
@@ -34,7 +35,7 @@ function PokemonList(){
                   <br></br>
                   type: {pokemon.type}
                   </Card.Text>
-                    <Button onClick={()=>{pokemonInPokedex(pokemon.name);}} variant="secondary">Capturer</Button>
+                    <Button className="card-hover" onClick={()=>{pokemonInPokedex(pokemon.name)}} variant="secondary">Capturer</Button>
                 </Card.Body>
               </Card>
             })
@@ -43,7 +44,7 @@ function PokemonList(){
             </Container>
         </div></Col>
         </Row>
-        
+        <Footer></Footer>
     </label>
 
 }

@@ -1,10 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Row from 'react-bootstrap/Row';
-import { getAll, pokemonInPokedex } from "../api/pokemon";
+import { getAll } from "../api/pokemon";
 import { useState,useEffect } from "react";
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
-import { Col, Container } from 'react-bootstrap';
+
 
 
 

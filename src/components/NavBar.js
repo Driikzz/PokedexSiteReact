@@ -7,7 +7,7 @@ import {Animated} from "react-animated-css";
 function Menu() {
     return (
       <>
-        <Navbar bg="dark" className='navbar' variant="dark">
+        <Navbar bg="dark" className='navbar m-0' variant="dark">
           <Container>
             
             <div className='logonavbar'>

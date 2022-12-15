@@ -25,6 +25,7 @@
 }
 .label{
   display: block;
+  margin: 0;
 }
 
 .cartePokemon{
@@ -154,3 +155,81 @@ background-color:#2f3e46;
 .carousel-inner{
   overflow: initial !important;
 }
+
+.pop{
+  height: 243px !important;
+}
+
+.background-carrousel{
+  background-color: #111;
+}
+
+.pokemonblanc{
+  background-image: url(img/pokemon_blanc.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  margin-left: 200px;
+}
+
+.pokemonnoir{
+  background-image: url(img/pokemon-noir.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  margin-left: 200px;
+}
+.policePokemonn{
+  font-family: 'Press Start 2P', cursive;
+}
+.fontsize-card-home{
+  font-size: 15px !important;
+}
+
+.footer-bakcground{
+  background-color: #111;
+  height: 300px;
+  margin: 0;
+}
+
+.footer-img{
+  background-image: url(components/LogonavBar.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  margin-top: 50px !important;
+}
+
+.footer-link a{
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-top: 20px;
+
+}
+
+.footer-cop{
+  text-align: center;
+  color: white;
+}
+
+.footer-contact{
+  margin-top: 50px !important;
+}
+
+.image-exemple{
+  margin-top: 50px;
+ background-image: url(img/image-exemple.png);
+ height: 300px;
+ width: 300px;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.card-hover:hover img {
+ transform:scale(1.5);
+}
+ 

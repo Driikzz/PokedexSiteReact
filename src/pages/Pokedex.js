@@ -7,6 +7,7 @@ import { deletePokedex } from "../api/pokemon";
 import Button from 'react-bootstrap/Button';
 import { getAll } from "../api/pokedex";
 import ChangeNameForm from "../components/ChangeNameForm";
+import Footer from "../components/Footer";
 
   function Pokedex(counter){
     const [ pokedex, setPokedex ] = useState([]);
@@ -31,7 +32,7 @@ import ChangeNameForm from "../components/ChangeNameForm";
         <Row >    
         {
             pokedex.map((pokedex, key) =>{
-                return <Card className="pokemon-card policePokemon car-shadow" style={{ width: '15rem'}}>
+                return <Card className="pokemon-card policePokemon car-shadow card-hover" style={{ width: '15rem'}}>
                 <Card.Img variant="top" style={{ width: '100px',height:'95px'}}  src={pokedex.sprites.normal} />
                 <Card.Body>
                   <Card.Title>{pokedex.name}</Card.Title>
@@ -53,6 +54,7 @@ import ChangeNameForm from "../components/ChangeNameForm";
         </div></Col>
         </Row>
       </div>
+      <Footer></Footer>
         
     </div>
 
